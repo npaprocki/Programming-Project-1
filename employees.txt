@@ -1,0 +1,28 @@
+100
+Fred Flintstone
+hourly
+42.5
+30.0
+200
+Barney Rubble
+hourly
+39.0
+30.0
+300
+Jane Manager
+monthly
+3300.0
+400
+Kris Manager
+monthly
+4000.0
+500
+Super Man
+hourly
+10.0
+14.0
+600
+Wonder Woman
+hourly
+20.0
+20.0
