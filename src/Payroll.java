@@ -28,7 +28,7 @@ public class Payroll {
 	 * @return ArrayList<Employee> list of employees added
 	 */
 
-	private static ArrayList<Employee> readFromFile(String fileName) {
+	public static ArrayList<Employee> readFromFile(String fileName) {
 
 		ArrayList<Employee> listOfEmployees = new ArrayList<Employee>();
 
@@ -83,14 +83,14 @@ public class Payroll {
 	 * @param employeeDirectory List of employees
 	 */
 
-	private static void ui(ArrayList<Employee> employeeDirectory) {
+	public static void ui(ArrayList<Employee> employeeDirectory) {
 
 		Scanner input = new Scanner(System.in);
 
 		// menu
 		System.out.println("\nPayroll Processing\n");
 		System.out.print("1. View Employee Information \n2. Add an Employee"
-				+ "\n3. Delete an Employee \n4. Output Payroll Information\n" + "5. Save Changes to File \n6. Exit\n");
+				+ "\n3. Delete an Employee \n4. Output Payroll Information\n" + "5. Save and Exit \n6. Exit Without Saving\n");
 
 		System.out.println("\nMake a Selection (1-6): ");
 
@@ -147,6 +147,7 @@ public class Payroll {
 
 		case 6:
 
+			System.out.println("\nGoodbye!");
 			System.exit(0);
 
 			break;
@@ -169,7 +170,7 @@ public class Payroll {
 	 * @param employeeDirectory List of employees
 	 */
 
-	private static void viewEmployeeInfo(ArrayList<Employee> employeeDirectory) {
+	public static void viewEmployeeInfo(ArrayList<Employee> employeeDirectory) {
 
 		System.out.print("\nView Employee Information: \n\n");
 
@@ -188,7 +189,7 @@ public class Payroll {
 	 * @param input             Scanner object to collect input
 	 */
 
-	private static void addEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
+	public static void addEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
 
 		System.out.println("\nEnter Employee ID: ");
 		int enteredEmployeeId = Integer.parseInt(input.nextLine());
@@ -244,7 +245,7 @@ public class Payroll {
 	 * @param input             Scanner object to collect input
 	 */
 
-	private static void deleteEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
+	public static void deleteEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
 
 		boolean removed = false;
 		int removeIndex = 0;
@@ -287,7 +288,7 @@ public class Payroll {
 	 * @param employeeDirectory
 	 */
 
-	private static void outputPayroll(ArrayList<Employee> employeeDirectory) {
+	public static void outputPayroll(ArrayList<Employee> employeeDirectory) {
 
 		for (Employee selectedEmployee : employeeDirectory) {
 
@@ -317,7 +318,7 @@ public class Payroll {
 	 * @param fileName
 	 */
 
-	private static void saveChanges(ArrayList<Employee> employeeDirectory, String fileName) {
+	public static void saveChanges(ArrayList<Employee> employeeDirectory, String fileName) {
 
 		try {
 
@@ -345,7 +346,9 @@ public class Payroll {
 			output.flush();
 			output.close();
 
-			System.out.println("\nFile saved successfully.");
+			System.out.println("\nFile saved successfully. Goodbye!");
+			
+			System.exit(0);
 
 		} catch (IOException e) {
 
