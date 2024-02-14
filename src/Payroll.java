@@ -28,7 +28,7 @@ public class Payroll {
 	 * @return ArrayList<Employee> list of employees added
 	 */
 
-	public static ArrayList<Employee> readFromFile(String fileName) {
+	private static ArrayList<Employee> readFromFile(String fileName) {
 
 		ArrayList<Employee> listOfEmployees = new ArrayList<Employee>();
 
@@ -83,7 +83,7 @@ public class Payroll {
 	 * @param employeeDirectory List of employees
 	 */
 
-	public static void ui(ArrayList<Employee> employeeDirectory) {
+	private static void ui(ArrayList<Employee> employeeDirectory) {
 
 		Scanner input = new Scanner(System.in);
 
@@ -169,7 +169,7 @@ public class Payroll {
 	 * @param employeeDirectory List of employees
 	 */
 
-	public static void viewEmployeeInfo(ArrayList<Employee> employeeDirectory) {
+	private static void viewEmployeeInfo(ArrayList<Employee> employeeDirectory) {
 
 		System.out.print("\nView Employee Information: \n\n");
 
@@ -188,7 +188,7 @@ public class Payroll {
 	 * @param input             Scanner object to collect input
 	 */
 
-	public static void addEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
+	private static void addEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
 
 		System.out.println("\nEnter Employee ID: ");
 		int enteredEmployeeId = Integer.parseInt(input.nextLine());
@@ -244,7 +244,7 @@ public class Payroll {
 	 * @param input             Scanner object to collect input
 	 */
 
-	public static void deleteEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
+	private static void deleteEmployee(ArrayList<Employee> employeeDirectory, Scanner input) {
 
 		boolean removed = false;
 		int removeIndex = 0;
@@ -287,7 +287,7 @@ public class Payroll {
 	 * @param employeeDirectory
 	 */
 
-	public static void outputPayroll(ArrayList<Employee> employeeDirectory) {
+	private static void outputPayroll(ArrayList<Employee> employeeDirectory) {
 
 		for (Employee selectedEmployee : employeeDirectory) {
 
@@ -317,7 +317,7 @@ public class Payroll {
 	 * @param fileName
 	 */
 
-	public static void saveChanges(ArrayList<Employee> employeeDirectory, String fileName) {
+	private static void saveChanges(ArrayList<Employee> employeeDirectory, String fileName) {
 
 		try {
 
